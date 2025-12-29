@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+
+#input-el {
+    padding: 10px;
+    border: 2px solid greenyellow;
+    margin-bottom: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#input-btn {
+    font-size: 20px;
+    color: white;
+    background-color: greenyellow;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    width: 140px;
+    height: 50px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+
+}
