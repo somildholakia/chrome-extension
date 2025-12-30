@@ -27,3 +27,17 @@ body {
     padding-top: 10px;
 
 }
+
+ul {
+    color: greenyellow;
+    padding-left: 0;
+    
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: greenyellow;
+}
