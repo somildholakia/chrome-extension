@@ -5,8 +5,12 @@ const ulEl = document.getElementById("ul-El")
 
 
 let leadsFromLocalStrorage = JSON.parse(localStorage.getItem("myLeads"))
-console.log(leadsFromLocalStrorage)
+// localStorage.clear()
 
+if(leadsFromLocalStrorage){
+    myLeads.push(leadsFromLocalStrorage)
+    renderLeads()
+}
 
 inputbtn.addEventListener("click", function () {
 
@@ -26,7 +30,7 @@ function renderLeads() {
     for (let i = 0; i < myLeads.length; i++) {
      listItems += `<li>
         <a href = ${myLeads} target ='_blank'>
-        ${myLeads} </a> 
+        ${myLeads[i]} </a> 
         </li>`
     }
 
