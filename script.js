@@ -6,12 +6,15 @@ const deleteEl = document.getElementById("delete-btn")
 const tabbtn = document.getElementById("tab-btn")
 
 const leadsFromLocalStrorage = JSON.parse(localStorage.getItem("myLeads"))
-
+if (leadsFromLocalStrorage) {
+    myLeads.push(leadsFromLocalStrorage)
+    render(myLeads)
+}
 
 
 tabbtn.addEventListener("click", function () {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        myLeads.push(tabs[0].URL)
+        myLeads.push(tabs[0].url)
         localStorage.setItem("myLeads", JSON.stringify(myLeads))
         render(myLeads)
     })
@@ -26,17 +29,14 @@ deleteEl.addEventListener("click", function () {
 })
 
 
-if (leadsFromLocalStrorage) {
-    myLeads.push(leadsFromLocalStrorage)
-    render(myLeads)
-}
+
 
 
 function render(Leads) {
     let listItems = []
     for (let i = 0; i < Leads.length; i++) {
         listItems += `<li>
-        <a href = ${Leads} target ='_blank'>
+        <a href = ${Leads[i]} target ='_blank'>
         ${Leads[i]} </a> 
         </li>`
     }
