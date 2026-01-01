@@ -3,8 +3,17 @@ const inputbtn = document.getElementById("input-btn")
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-El")
 const deleteEl = document.getElementById("delete-btn")
+const tabbtn = document.getElementById("tab-btn")
 
 const leadsFromLocalStrorage = JSON.parse(localStorage.getItem("myLeads"))
+
+const tabs = [
+    {URL: "https://github.com/somildholakia"}
+]
+
+tabbtn.addEventListener("click", function(){
+    console.log(tabs[0])
+})
 
 deleteEl.addEventListener("click", function () {
     localStorage.clear()
