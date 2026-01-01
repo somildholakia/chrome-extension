@@ -12,7 +12,9 @@ const tabs = [
 ]
 
 tabbtn.addEventListener("click", function(){
-    console.log(tabs[0])
+    myLeads.push(tabs[0].URL)
+    localStorage.setItem("myLeads",JSON.stringify(myLeads))
+    render(myLeads)
 })
 
 deleteEl.addEventListener("click", function () {
