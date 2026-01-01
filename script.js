@@ -12,6 +12,7 @@ const tabs = [
 ]
 
 tabbtn.addEventListener("click", function(){
+    
     myLeads.push(tabs[0].URL)
     localStorage.setItem("myLeads",JSON.stringify(myLeads))
     render(myLeads)
