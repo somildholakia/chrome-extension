@@ -7,15 +7,15 @@ const tabbtn = document.getElementById("tab-btn")
 
 const leadsFromLocalStrorage = JSON.parse(localStorage.getItem("myLeads"))
 
-const tabs = [
-    {URL: "https://github.com/somildholakia"}
-]
 
-tabbtn.addEventListener("click", function(){
-    
-    myLeads.push(tabs[0].URL)
-    localStorage.setItem("myLeads",JSON.stringify(myLeads))
-    render(myLeads)
+
+tabbtn.addEventListener("click", function () {
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        myLeads.push(tabs[0].URL)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads))
+        render(myLeads)
+    })
+
 })
 
 deleteEl.addEventListener("click", function () {
